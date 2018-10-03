@@ -5,11 +5,7 @@ app.set('view engine', 'pug');
 
 app.use('/assets',express.static('assets'));
 
-app.get('/', (req, res) => {
-  res.render('index',{
-    pageTitle: "Login"
-  });
-});
+
 
 app.get('/form', (req, res)=>{
   res.render('form', {
@@ -17,7 +13,7 @@ app.get('/form', (req, res)=>{
   })
 })
 
-app.get('/home', (req, res)=>{
+app.get('/', (req, res)=>{
   res.render('home',{
     pageTitle : 'Home'
   });
@@ -28,6 +24,9 @@ app.get('/listTamu',(req, res)=>{
     pageTitle : 'List Tamu'
   });
 })
+
+
+
 app.listen(3000, () => {
   console.log(`Server started on port http://localhost:3000`);
 });

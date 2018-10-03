@@ -1,0 +1,12 @@
+#photo-frame {
+    display: block;
+    width: 100%;
+}
+#photoCanvas {
+    display: none;
+    width: 100%
+}
+
+#btn-capture {
+    display: none;
+}

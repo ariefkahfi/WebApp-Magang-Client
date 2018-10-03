@@ -1,6 +1,9 @@
 extends layout
 
 
+block cssScript
+    link(rel="stylesheet", href="/assets/css/form.css")
+
 block jsScript
     script(src="/assets/js/form.js")
 
@@ -12,7 +15,9 @@ block mainContainer
                 div(class="modal-header")
                     h5(class="modal-title") Silahkan Ambil Foto Tamu
                 div(class="modal-body")
-                    p Hello body
+                    canvas(id="photoCanvas")
+                    video(autoplay, id="photo-frame")
+                    button(class="btn btn-primary w-100 my-2",id="btn-capture",onclick="onCaptureImage()") Capture
 
 
     div(class="jumbotron jumbotron-fluid")
@@ -54,5 +59,5 @@ block mainContainer
                     div(class="col-sm-10")
                         button(class="btn btn-outline-primary",onclick="onAmbilFotoModal()",type="button") Ambil Foto
                 div(class="col-auto")
-                    button(type="submit" class="btn btn-primary") Selesai
+                    button(type="submit" class="btn btn-primary" , id="btn-selesai",disabled) Selesai
             
